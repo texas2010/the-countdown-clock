@@ -1,0 +1,21 @@
+.Length {
+  /* flex-grow: 1; */
+}
+
+.Length h3 {
+  text-align: center;
+}
+
+.Length > div {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.Length button {
+  cursor: pointer;
+}
+
+.Length button,
+.Length span {
+  padding: 8px 14px;
+}
