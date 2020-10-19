@@ -19,13 +19,13 @@ export default class Time extends Component {
     render() {
         const {
             title,
-            timeValue
+            timeValue,
         } = this.props
         return (
             <div className="Time">
                 <h2 id="timer-label">{title}</h2>
                 <div>
-                    <h1 id="time-left">{this.formatTime(timeValue * 60)}</h1>
+                    <h1 id="time-left">{this.formatTime(timeValue)}</h1>
                 </div>
             </div>
         )
