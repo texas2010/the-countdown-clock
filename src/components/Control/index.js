@@ -12,6 +12,7 @@ export default class Control extends Component {
             <div className="Control">
                 <button id="start_stop" onClick={handlePlay}>{isRunning ? 'Pause' : 'Start'}</button>
                 <button id="reset" onClick={handleReset}>Reset</button>
+                <audio id="beep" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"></audio>
             </div>
         )
     }

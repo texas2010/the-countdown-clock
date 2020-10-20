@@ -33,7 +33,10 @@ export default class App extends Component {
                     this.setState(state => ({
                         currentCountDown: state.currentCountDown - 1
                     }))
-                } else if (this.state.currentCountDown === 0) {
+                    return
+                }
+                if (!this.state.currentCountDown) {
+                    document.getElementById('beep').play()
                     if (this.state.currentTitle === 'Session') {
                         this.setState(state => ({
                             currentCountDown: state.breakValue * 60,
@@ -45,6 +48,11 @@ export default class App extends Component {
                             currentTitle: 'Session'
                         }))
                     }
+                    setTimeout(() => {
+                        document.getElementById('beep').pause()
+                        document.getElementById('beep').currentTime = 0;
+                    }, 1000)
+                    return
                 }
             }, 1000)
             this.setState({
@@ -57,6 +65,8 @@ export default class App extends Component {
         }
     }
     handleReset() {
+        document.getElementById('beep').pause()
+        document.getElementById('beep').currentTime = 0;
         if (this.state.timeID) {
             clearInterval(this.state.timeID)
         }
